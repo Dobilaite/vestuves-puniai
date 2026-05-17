@@ -63,8 +63,9 @@ function RSVPPage() {
       pageidavimai: "",
     });
   } catch (error) {
-    setStatus("error");
-  }
+  console.error(error);
+  setStatus("error");
+}
 };
 
   return (
