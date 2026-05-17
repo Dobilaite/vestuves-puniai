@@ -1,4 +1,5 @@
 import './index.css';
+import ScrollToTop from "./components/ScrollToTop";
 
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ import ContactPage from "./pages/ContactPage";
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/location" element={<LocationPage />} />

@@ -16,6 +16,10 @@ function RSVPPage() {
     pageidavimai: "",
   });
 
+  const [status, setStatus] = useState<
+    "idle" | "success" | "error" | "loading"
+  >("idle");
+
   const handleChange = (
     e: React.ChangeEvent<
   HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -27,13 +31,30 @@ function RSVPPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  setStatus("loading");
+
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 1200));
 
     console.log(formData);
 
-    alert("Ačiū! Jūsų atsakymas išsaugotas 💛");
-  };
+    setStatus("success");
+
+    setFormData({
+      vardas: "",
+      pavarde: "",
+      telefonas: "",
+      dalyvavimas: "",
+      maistas: "",
+      pageidavimai: "",
+    });
+  } catch (error) {
+    setStatus("error");
+  }
+};
 
   return (
     <>
@@ -322,11 +343,39 @@ function RSVPPage() {
 
                   {/* SUBMIT */}
                   <button
-                    type="submit"
-                    className="w-full bg-[#80944d] hover:bg-[#6f8143] text-white rounded-2xl py-5 text-lg font-semibold transition-all duration-300 mt-4"
-                  >
-                    Patvirtinti dalyvavimą
-                  </button>
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full bg-[#80944d] hover:bg-[#6f8143] disabled:opacity-70 disabled:cursor-not-allowed text-white rounded-2xl py-5 text-lg font-semibold transition-all duration-300 mt-4"
+                >
+                {status === "loading"
+                    ? "Siunčiama..."
+                    : "Patvirtinti dalyvavimą"}
+                </button>
+                {status === "success" && (
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 bg-[#80944d]/10 border border-[#80944d]/20 text-[#31411f] rounded-2xl p-5 text-center"
+                >
+                    <p className="font-semibold mb-1">
+                    Ačiū! 💛
+                    </p>
+
+                    <p className="text-sm text-[#556146]">
+                    Jūsų atsakymas sėkmingai išsaugotas.
+                    </p>
+                </motion.div>
+                )}
+
+                {status === "error" && (
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-100 border border-red-200 text-red-700 rounded-2xl p-5 text-center"
+                >
+                    Nepavyko išsiųsti formos. Bandykite dar kartą.
+                </motion.div>
+                )}
                 </form>
               </motion.div>
             </div>
