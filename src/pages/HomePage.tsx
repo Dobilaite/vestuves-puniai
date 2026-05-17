@@ -295,6 +295,54 @@ function HomePage() {
           </section>
         </div>
 
+        {/* GIFTS */}
+        <section className="py-24 bg-[#f3eedf] border-t border-[#d8d0bf]/40">
+
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+
+            <motion.div
+            initial={{
+                opacity: 0,
+                y: 20,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            viewport={{
+                once: true,
+            }}
+            transition={{
+                duration: 0.6,
+            }}
+            className="bg-[#f7f2e8] rounded-[2.5rem] border border-[#d8d0bf]/60 px-8 py-14 md:px-14 text-center"
+            >
+
+            <div className="flex items-center justify-center gap-3 mb-6">
+                <Heart className="h-8 w-8 text-[#80944d] fill-[#80944d]" />
+            </div>
+
+            <h2
+                className="text-[2.5rem] md:text-[3.5rem] font-semibold text-[#31411f] mb-8"
+                style={{
+                fontFamily: "Playfair Display, serif",
+                letterSpacing: "-0.03em",
+                }}
+            >
+                Dovanos
+            </h2>
+
+            <p className="text-lg md:text-xl text-[#556146] leading-relaxed max-w-2xl mx-auto">
+                Jūsų buvimas mūsų šventėje yra didžiausia dovana 💛
+                <br />
+                <br />
+                Tačiau jei norėtumėte prisidėti prie mūsų bendros ateities kūrimo,
+                būsime dėkingi už vokelį.
+            </p>
+            </motion.div>
+        </div>
+        </section>
+
         <Footer />
       </div>
     </>
