@@ -333,11 +333,7 @@ function HomePage() {
             </h2>
 
             <p className="text-lg md:text-xl text-[#556146] leading-relaxed max-w-2xl mx-auto">
-                Jūsų buvimas mūsų šventėje yra didžiausia dovana 💛
-                <br />
-                <br />
-                Tačiau jei norėtumėte prisidėti prie mūsų bendros ateities kūrimo,
-                būsime dėkingi už vokelį.
+                Dovanas maloniai prašome dovanoti vokeliuose. 💛
             </p>
             </motion.div>
         </div>
