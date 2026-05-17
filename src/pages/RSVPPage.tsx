@@ -37,9 +37,20 @@ function RSVPPage() {
   setStatus("loading");
 
   try {
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbzjCKASxGvWF3erPTIO2xKRxK1AARvCZgqUVh1-eny0d5YtdwJet1BMkE9Nd0X6R7FA7g/exec",
+    {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    }
+    );
 
-    console.log(formData);
+    if (!response.ok) {
+    throw new Error("Failed");
+    }
 
     setStatus("success");
 

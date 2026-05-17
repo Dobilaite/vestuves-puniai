@@ -81,7 +81,7 @@ function LocationPage() {
     </section>
 
           {/* CEREMONY */}
-          <section className="py-0">
+          <section className="py-10">
             <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
 
               <motion.div
