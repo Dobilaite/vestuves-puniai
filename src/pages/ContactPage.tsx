@@ -248,7 +248,7 @@ function ContactPage() {
                 </h3>
 
                 <p className="text-[1.05rem] text-[#556146] leading-relaxed max-w-3xl mx-auto">
-                  Nesidrovėkite susisiekti su mumis dėl bet kokių klausimų apie vestuvių dieną, vietą, aprangą ar bet kokią kitą informaciją. Mielai atsakysime į visus jūsų klausimus ir padėsime pasiruošti šiai ypatingai dienai.
+                  Nesidrovėkite susisiekti su mumis dėl bet kokių klausimų apie vestuvių dieną, vietą, aprangą ar bet kokią kitą informaciją. Mielai atsakysime į visus jūsų klausimus.
                 </p>
               </motion.div>
             </div>
